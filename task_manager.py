@@ -1,5 +1,19 @@
 import json
 
+# Dummy login credentials
+DUMMY_EMAIL = "mnkglobal@example.com"
+DUMMY_PASSWORD = "mnk123"
+
+def login():
+    print("Welcome to the Task Manager CLI Application")
+    email = input("Enter your email: ")
+    password = input("Enter your password: ")
+    if email == DUMMY_EMAIL and password == DUMMY_PASSWORD:
+        print("Login successful!\n")
+    else:
+        print("Invalid email or password. Please try again.")
+        exit()
+
 class Task:
     def __init__(self, task_id, title, completed=False):
         self.id = task_id
@@ -48,6 +62,7 @@ def load_tasks():
         tasks = []
 
 def main():
+    login()
     load_tasks()
     while True:
         print("\nTask Manager CLI")
